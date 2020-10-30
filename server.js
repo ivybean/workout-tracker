@@ -15,7 +15,8 @@ app.use(logger("dev"))
 app.use(logger("combined"));
 
 //Add Mongoose.connect
-mongo.connect(process.env.MONGODB_URI || "mongodb://localhost/workout-tracker",{
+mongo.connect(process.env.MONGODB_URI || "mongodb://localhost/workout-tracker",
+{
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
