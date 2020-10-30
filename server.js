@@ -4,16 +4,18 @@ const logger = require("morgan");
 
 const app = express();
 
+// const logger = morgan('combined')
+
 const PORT = process.env.PORT || 8080;
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
-app.use(loger("dev"))
+app.use(logger("dev"))
 app.use(logger("combined"));
 
 //Add Mongoose.connect
-mongo.Mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout-tracker",{
+mongo.connect(process.env.MONGODB_URI || "mongodb://localhost/workout-tracker",{
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
